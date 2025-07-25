@@ -1,0 +1,86 @@
+COMS221 Operating Systems Labs – Student Setup
+===============================================
+
+Follow these steps once to create your own private repository for the OS labs.
+
+------------------------------------------------------------
+
+1. Prerequisites
+----------------
+- A GitHub account (https://github.com).
+
+------------------------------------------------------------
+
+2. Install GitHub CLI (gh)
+--------------------------
+The `gh` tool lets the script create private repositories and add the instructor as a collaborator automatically.
+
+Run:
+
+    chmod +x install_gh_cli.sh
+    ./install_gh_cli.sh
+
+After installation, authenticate with GitHub (if prompted):
+
+    gh auth login
+
+Choose:
+- GitHub.com
+- HTTPS
+- Yes to browser login (or copy-paste the code shown).
+
+------------------------------------------------------------
+
+3. Clone the Starter Repository
+-------------------------------
+Clone the public starter code:
+
+    cd ~/GitHub
+    git clone https://github.com/Sussex-County-Community-College/coms221-xv6-labs-fa25.git
+    cd coms221-xv6-labs-fa25
+
+------------------------------------------------------------
+
+4. Create Your Private Repository
+---------------------------------
+Run the provided script:
+
+    chmod +x create_student_repo.sh
+    ./create_student_repo.sh
+
+The script will ask for:
+- Your GitHub username.
+- A name for your private repository (press Enter for default).
+- Confirmation to create the private repo.
+
+It will automatically:
+- Create the private repo under your account.
+- Push all branches and tags.
+- Add the instructor as a collaborator (write access).
+
+------------------------------------------------------------
+
+5. Work on Assignments
+----------------------
+Each lab is on its own branch. For example, to start Lab 1:
+
+    git checkout util
+
+After making changes:
+
+    git add .
+    git commit -m "Completed util lab"
+    git push
+
+Preferably, you should use the GitHub desktop application to manage your repository.
+
+------------------------------------------------------------
+
+6. Need Help?
+-------------
+- If you see "gh: command not found", run ./install_gh_cli.sh again.
+- Make sure you are logged into GitHub via gh auth login.
+- If the repo creation fails, you can manually create a private repo on GitHub and set it as the origin.
+
+------------------------------------------------------------
+
