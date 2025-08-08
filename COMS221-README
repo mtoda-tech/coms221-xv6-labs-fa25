@@ -2,20 +2,33 @@ COMS221 Operating Systems Labs – Student Setup
 ===============================================
 
 Follow these steps once to create your own private repository for the OS labs.
+The master repository is:
+https://github.com/Sussex-County-Community-College/coms221-xv6-labs-fa25.git
 
 ------------------------------------------------------------
-
 1. Prerequisites
-----------------
+------------------------------------------------------------
 - A GitHub account (https://github.com).
 
 ------------------------------------------------------------
+2. Clone the Master Repository
+------------------------------------------------------------
+First, clone the public starter code from the master repository:
 
-2. Install GitHub CLI (gh)
---------------------------
-The `gh` tool lets the script create private repositories and add the instructor as a collaborator automatically.
+    cd ~/GitHub
+    git clone https://github.com/Sussex-County-Community-College/coms221-xv6-labs-fa25.git
+    cd coms221-xv6-labs-fa25
 
-Run:
+All setup scripts are located in the root directory of the cloned repository.
+Run them from here.
+
+------------------------------------------------------------
+3. Install GitHub CLI (gh)
+------------------------------------------------------------
+The "gh" tool lets the script create private repositories and add the instructor
+as a collaborator automatically.
+
+From inside the cloned repository, run:
 
     chmod +x install_gh_cli.sh
     ./install_gh_cli.sh
@@ -30,20 +43,9 @@ Choose:
 - Yes to browser login (or copy-paste the code shown).
 
 ------------------------------------------------------------
-
-3. Clone the Starter Repository
--------------------------------
-Clone the public starter code:
-
-    cd ~/GitHub
-    git clone https://github.com/Sussex-County-Community-College/coms221-xv6-labs-fa25.git
-    cd coms221-xv6-labs-fa25
-
-------------------------------------------------------------
-
 4. Create Your Private Repository
----------------------------------
-Run the provided script:
+------------------------------------------------------------
+From the repository root, run:
 
     chmod +x create_student_repo.sh
     ./create_student_repo.sh
@@ -59,9 +61,8 @@ It will automatically:
 - Add the instructor as a collaborator (write access).
 
 ------------------------------------------------------------
-
 5. Work on Assignments
-----------------------
+------------------------------------------------------------
 Each lab is on its own branch. For example, to start Lab 1:
 
     git checkout util
@@ -72,15 +73,14 @@ After making changes:
     git commit -m "Completed util lab"
     git push
 
-Preferably, you should use the GitHub desktop application to manage your repository.
+Preferably, you should use the GitHub Desktop application to manage your repository.
 
 ------------------------------------------------------------
-
 6. Need Help?
--------------
-- If you see "gh: command not found", run ./install_gh_cli.sh again.
-- Make sure you are logged into GitHub via gh auth login.
-- If the repo creation fails, you can manually create a private repo on GitHub and set it as the origin.
-
 ------------------------------------------------------------
+- If you see "gh: command not found", run ./install_gh_cli.sh again from the
+  repository root.
+- Make sure you are logged into GitHub via gh auth login.
+- If the repo creation fails, you can manually create a private repo on GitHub
+  and set it as the origin.
 
