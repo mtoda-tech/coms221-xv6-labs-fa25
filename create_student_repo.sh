@@ -106,9 +106,12 @@ if git remote get-url "$STUDENT_REMOTE" >/dev/null 2>&1; then
 fi
 git remote add "$STUDENT_REMOTE" "$CLONE_URL"
 
-# 3) Mirror push (branches, tags, all refs)
-green "Pushing ALL refs (branches & tags) to the private repo..."
-git push --mirror "$STUDENT_REMOTE"
+# 3) Push all origin branches and tags as proper branches/tags
+green "Pushing ALL branches and tags to the private repo..."
+git fetch origin --prune --tags
+git push --prune "$STUDENT_REMOTE" \
+  'refs/remotes/origin/*:refs/heads/*' \
+  'refs/tags/*:refs/tags/*'
 
 # 4) (Optional) Remove the temporary remote to keep the local repo clean.
 git remote remove "$STUDENT_REMOTE"
