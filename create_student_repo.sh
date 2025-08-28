@@ -113,6 +113,10 @@ git push --prune "$STUDENT_REMOTE" \
   'refs/remotes/origin/*:refs/heads/*' \
   'refs/tags/*:refs/tags/*'
 
+# --- Set default branch to util ---------------------------------------------
+green "Setting default branch to util..."
+gh api -X PATCH "repos/${TARGET_FULL}" -f default_branch=util >/dev/null
+
 # 4) (Optional) Remove the temporary remote to keep the local repo clean.
 git remote remove "$STUDENT_REMOTE"
 
